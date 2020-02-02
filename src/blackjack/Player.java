@@ -10,5 +10,16 @@ package blackjack;
  * @author gubotdev
  */
 public class Player {
+    private Hand myHand = new Hand();
+    private String name = null;
+    
+    public String getName(){
+        return null; //CHANGE!!!!!
+    }
+    
+    public Hand getMyHand(){
+        return null; //I think my "u" key is a little borked(((
+    }
+    
     
 }
