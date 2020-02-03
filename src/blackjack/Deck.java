@@ -46,7 +46,7 @@ public class Deck {
             if((myCards[i].RANK).equals("Jack")& (myCards[i].SUIT).equals
             ("Spades")){
                 System.out.println(myCards[i].RANK + " of " + myCards[i].SUIT +
-                        ". Oh no oh shit he's here fu-");
+                        ". Oh no oh shit he's here oh fu-");
             }else{
             System.out.println(myCards[i].RANK + " of " + myCards[i].SUIT);
             }
@@ -54,7 +54,13 @@ public class Deck {
     }
     
     public Card dealCard(){
-        return null; //change thiss!!!!!!!!!!!!!!!!!!!!!!!!!!
+        Card next = myCards[nextCard]; //there's a variable up there
+        nextCard++;
+        if(nextCard > 51){
+            shuffle();
+            nextCard = 0;
+        }
+        return next; 
     }
     
     
