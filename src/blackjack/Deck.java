@@ -11,16 +11,23 @@ package blackjack;
  */
 public class Deck {
     private Card[] myCards = new Card[52];
-    private String[] ranks = {};
-    private String[] suits = {};
+    private String[] ranks = {"Ace","2","3","4","5","6","7","8","9","10","Jack",
+                                "Queen","King"};
+    private String[] suits = {"Spades","Diamonds","Clubs","Hearts"};
     private int nextCard = 0;
     
     public Deck(){
-        
+        initDeck();
     } 
     
     private void initDeck(){
-        
+        int index = 0;
+        for(int s = 0; s < suits.length; s++){
+            for(int r = 0; r < ranks.length; r++){
+                myCards[index] = new Card(ranks[r], suits[s]);
+                index++;
+            }
+        }
     }
     
     private void shuffle(){
@@ -29,7 +36,15 @@ public class Deck {
     //printDeck is for testing only
     
     public void printDeck(){
-        
+        for (int i = 0; i < myCards.length; i++){
+            if((myCards[i].RANK).equals("Jack")& (myCards[i].SUIT).equals
+            ("Spades")){
+                System.out.println(myCards[i].RANK + " of " + myCards[i].SUIT +
+                        ". Oh no oh shit he's here fu-");
+            }else{
+            System.out.println(myCards[i].RANK + " of " + myCards[i].SUIT);
+            }
+        }
     }
     
     public Card dealCard(){
