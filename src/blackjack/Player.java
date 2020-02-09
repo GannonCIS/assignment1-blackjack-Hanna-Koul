@@ -13,12 +13,16 @@ public class Player {
     private Hand myHand = new Hand();
     private String name = null;
     
-    public String getName(){
-        return null; //CHANGE!!!!!
+    public Player(String username){
+        name = username;
     }
     
-    public Hand getMyHand(){
-        return null; //I think my "u" key is a little borked(((
+    public String getName(){
+        return name; //CHANGE!!!!!
+    }
+    
+    public Hand getHand(){
+        return myHand; 
     }
     
     
