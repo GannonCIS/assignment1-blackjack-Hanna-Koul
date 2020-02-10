@@ -45,7 +45,13 @@ public class Hand {
     
     public void printHand(){
         for(int i = 0; i < myCards.length; i++){
-            System.out.println(myCards[i].RANK + " of " + myCards[i].SUIT);
+            System.out.println(myCards[i].RANK + " of " + myCards[i].SUIT); //problem
+        }
+    }
+    
+    public void printCusHand(int numOfCard){
+        for(int i = 0; i < numOfCard; i++){
+            System.out.println(myCards[i].RANK + " of " + myCards[i].SUIT); //solution
         }
     }
 }

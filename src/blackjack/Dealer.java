@@ -40,7 +40,7 @@ public class Dealer {
     public void playOutPlayerHands(){
         for (Player currPlayer : myPlayers){
             System.out.println("\n" + currPlayer.getName() + "'s Hand");
-            currPlayer.getHand().printHand();
+            currPlayer.getHand().printCusHand(currPlayer.getHand().getNumOfCards()); //problem
             while (currPlayer.getHand().getNumOfCards() < 5 && 
                     currPlayer.getHand().getScore() < 21){
                 System.out.println("Want a hit? (y/n)");
@@ -51,7 +51,8 @@ public class Dealer {
                 }else{
                     break;
                 }
-                currPlayer.getHand().printHand();
+                currPlayer.getHand().printCusHand(currPlayer.getHand().getNumOfCards());
+                System.out.print("\n");
             }
         }
     }
@@ -61,7 +62,8 @@ public class Dealer {
             dealerHand.addCard(myDeck.dealCard());
         }
         System.out.println("Dealer's Hand: ");
-        dealerHand.printHand();
+        dealerHand.printCusHand(dealerHand.getNumOfCards());
+        System.out.println("\n");
     }
     
     public void declareWinners(){
@@ -74,26 +76,31 @@ public class Dealer {
                         (currPlayer.getHand().getNumOfCards() > 5 &&
                         currPlayer.getHand().getScore() > 21)){
                     System.out.println(currPlayer.getName() + " busted!");
+                    System.out.print("\n");
                 }else{
                     if(currPlayer.getHand().getScore() == 21){
                         if (dealerHand.getScore() == 21){
                             System.out.println("The dealer defeats " + 
                                     currPlayer.getName() + 
                                     " with a score of 21!");
+                            System.out.print("\n");
                         }else{
                             System.out.println(currPlayer.getName() + 
                                     " defeats the dealer with a score of 21!");
+                            System.out.print("\n");
                         }
                     }else if(currPlayer.getHand().getScore() > 
                             dealerHand.getScore()){
                         System.out.println(currPlayer.getName() + 
                                 " defeats the dealer with a score of " + 
-                                currPlayer.getHand().getScore());
+                                currPlayer.getHand().getScore() + "!");
+                        System.out.print("\n");
                     }else{
                         System.out.println("The dealer defeats " + 
                                     currPlayer.getName() + 
                                     " with a score of " + 
-                                dealerHand.getScore());
+                                dealerHand.getScore() + "!");
+                        System.out.print("\n");
                     }
                 }
             }
