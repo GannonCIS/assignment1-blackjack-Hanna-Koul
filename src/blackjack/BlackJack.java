@@ -16,10 +16,7 @@ public class BlackJack {
      */
     public static void main(String[] args) {
         Dealer sam = new Dealer();
-        sam.dealOpeningHand();
-        sam.playOutPlayerHands();
-        sam.playOutDealerHand();
-        sam.declareWinners();
+        sam.playGame();
     }
 }
     
