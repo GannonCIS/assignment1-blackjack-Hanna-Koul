@@ -13,8 +13,12 @@ public class Player {
     private Hand myHand = new Hand();
     private String name = null;
     
-    public Player(String username){
-        name = username;
+    public Player(String name){
+        this.name = name;
+    }
+    
+    public Player(int playerNum){
+        name = "Player " + playerNum;
     }
     
     public String getName(){
